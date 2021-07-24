@@ -1,0 +1,1 @@
+Exercicio 02 -> Escreva abaixo um script em CSS e vincule ao arquivo HTML acima formatando-o para uma experiência do usuário mais clara, objetiva e agradável.
