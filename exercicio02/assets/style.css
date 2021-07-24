@@ -14,14 +14,36 @@
 }
 
 body {
+  background: url(/assets/background.svg) no-repeat;
+  background-position: center;
+  color: white;
+}
+
+.author {
+  text-align: center;
+}
+
+.author p {
+  padding-top: 10px;
+}
+
+.author a{
+  text-decoration: none;
+  color: #896CEB;
+  font-weight: bold;
+}
+
+.author a:hover {
+  filter: drop-shadow(0px 0px 4px #896CEB);
+  transition: 0.2s;
+  
+}
+
+main {
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: url(/assets/background.svg) no-repeat;
- 
-  background-position: center;
-  color: white;
 }
 
 .box-form {
@@ -96,6 +118,6 @@ button {
 
 button:hover,
 button:focus {
-  opacity: 0.9;
+  filter: drop-shadow(0px 0px 4px #896CEB);
   transition: 0.3s;
 }
