@@ -1,12 +1,14 @@
 const getUsernameSize = () => {
   const username = document.querySelector('#username').value
-  
   return username.replace(' ', '').length
 
 }
 
 const getAge = () => {
   const birthDateElement = document.querySelector('#birthDate').value
+  
+  if (!birthDateElement)
+    return undefined
 
   const today = new Date()
   const birthDate = new Date(birthDateElement)
@@ -31,8 +33,14 @@ const getAge = () => {
 const returnData = () => {
   const usernameSize = getUsernameSize()
   const age = getAge()
+  let text
 
-  const text = `Tamanho do seu nome: ${usernameSize}\nVocê tem ${age.years} anos e ${age.month} meses!`
+  if (!usernameSize || !age)
+    text = 'Por favor, preencha todos os campos!'
+  else
+    text = `Tamanho do seu nome: ${usernameSize}\nVocê tem ${age.years} anos e ${age.month} meses!`
+
+
 
   alert(text)
 }

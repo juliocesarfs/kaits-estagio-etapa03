@@ -149,7 +149,7 @@ button:focus {
   }
 }
 
-@media (max-width: 310px) {
+@media (max-width: 314px) {
   .box-form h1 {
     font-size: 19px;
   }
