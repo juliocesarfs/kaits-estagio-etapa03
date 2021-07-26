@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+:root {
+  --body-color: #121214;
+  --box-color: #202024;
+  --placeholder-color: grey;
+  --purple-color: #896CEB;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  background: url(/public/background.svg) no-repeat;
+  background-position: center;
+  background-color: black;
+  color: white;
+}
+
+.author {
+  text-align: center;
+}
+
+.author p {
+  padding-top: 10px;
+}
+
+.author a{
+  text-decoration: none;
+  color: var(--purple-color);
+  font-weight: bold;
+}
+
+.author a:hover {
+  filter: drop-shadow(0px 0px 4px var(--purple-color));
+  transition: 0.2s;
+  
+}
+
+main {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.box-form {
+  width: 520px;
+  height: 250px;
+  background-color: var(--box-color);
+  padding: 20px;
+  margin: 10px;
+  border-radius: 2px;
+  filter: drop-shadow(0 0 0.75rem black);
+
+  animation: up 700ms ease;
+}
+
+@keyframes up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+
+.box-form h1 {
+  margin-bottom: 30px;
+  font-weight: normal;
+}
+
+.box-form form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.item div:nth-child(1) {
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0.9px;
+  font-weight: normal;
+  color: var(--placeholder-color);
+}
+
+.item input {
+  width: 200px;
+  height: 30px;
+  border-radius: 3px;
+  border: none;
+  font-size: 18px;
+  padding: 10px;
+  background-color: var(--body-color);
+  color: white;
+}
+
+.item input:focus {
+  outline-color: var(--purple-color) !important;
+}
+
+
+button {
+  border: none;
+  margin-top: 25px;
+  padding: 10px 30px;
+  width: 100%;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: var(--purple-color);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover,
+button:focus {
+  filter: drop-shadow(0px 0px 4px var(--purple-color));
+  transition: 0.3s;
+}
+
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 462px) {
+  .box-form {
+    height: 315px;
+  }
+
+  .box-form form {
+    flex-direction: column;
+  }
+
+  .box-form h1 {
+    font-size: 20px;
+  }
+
+  .item:first-child input {
+    margin-bottom: 20px;
+  }
+
+  .item input {
+    width: 250px;
+  }
+}
+
+@media (max-width: 310px) {
+  .box-form h1 {
+    font-size: 19px;
+  }
+}

@@ -14,7 +14,7 @@
     <main>
       <section class="box-form">
         <h1>Olá, queremos algumas informações sobre você! 😊</h1>
-        <form>
+        <form method="post" class="form">
           <div class="item">
             <div>Nome</div>
             <div>
@@ -37,9 +37,38 @@
             </div>
           </div>
 
-          <button type="submit">Avançar</button>
+          <button name="advance" type="submit">Avançar</button>
         </form>
+
+        <?php
+          function getUsernameSize() {
+            $username = $_POST['username'];
+            $username = str_replace(' ', '', $username);
+
+            return strlen($username);
+          }
+
+          function getAge() {
+              $birthDate = new DateTime ($_POST['birthDate']);
+              $today = new DateTime();
+              $age = $today->diff($birthDate);
+
+              return array($age->y, $age->m);
+          }
+
+          if (isset($_POST['advance'])) {
+            $array = getAge();
+            $usernameSize = getUsernameSize();
+            echo "Tamanho do seu nome: $usernameSize\nVocê tem $array[0] anos e $array[1] meses!";
+          }
+        ?>
       </section>
     </main>
+
+    <script src="/public/scripts.js"></script>
+  
+  
+  
+  
   </body>
 </html>
